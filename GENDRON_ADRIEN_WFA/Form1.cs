@@ -14,15 +14,16 @@ namespace GENDRON_ADRIEN_WFA
     {
 
         bool goLeft, goRight, jumping, isGameOver;
-
+        
+        //Pour le joueur
         int jumpSpeed;
         int force;
         int score = 0;
         int playerSpeed = 7;
-
+        //Pour les plateforme
         int horizontalSpeed = 5;
         int verticalSpeed = 3;
-
+        //Pour les ennemies
         int ennemyOneSpeed = 5;
         int ennemyTwoSpeed = 3;
 
@@ -84,16 +85,72 @@ namespace GENDRON_ADRIEN_WFA
 
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Left)
+            {
+                goLeft = true;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                goRight = true;
+            }
+            if (e.KeyCode == Keys.Space && jumping == false)
+            {
+                jumping = true
+            }
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Left)
+            {
+                goLeft = false;
+            }
+            if (e.KeyCode == Keys.Right)
+            {
+                goRight = false;
+            }
+            if (jumping == true)
+            {
+                jumping = false;
+            }
 
+            if (e.KeyCode == Keys.Enter && isGameOver == true)
+            {
+                RestartGame();
+            }
         }
 
         private void RestartGame()
         {
+            jumping = false;
+            goLeft = false;
+            goRight = false;
+            isGameOver = false;
+            score = 0;
+
+            txtscore.Text = "Score: " + score;
+
+            foreach (Control x in this.Controls)
+            {
+                if (x is PictureBox && x.Visible == false)
+                {
+                    x.Visible = true;
+                }
+            }
+
+
+
+            player.Left = 60;
+            player.Top = 665;
+
+            ennemyOne.Left = 371;
+            ennemyTwo.Left = 381;
+
+            horizontalPlateform.Left = 167;
+            verticalPlateform.Top = 609;
+
+            gameTimer.Start();
+
 
         }
     }

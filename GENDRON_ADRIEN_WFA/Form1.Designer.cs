@@ -217,7 +217,7 @@
             // player
             // 
             this.player.BackColor = System.Drawing.Color.DarkBlue;
-            this.player.Location = new System.Drawing.Point(23, 700);
+            this.player.Location = new System.Drawing.Point(60, 665);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(30, 40);
             this.player.TabIndex = 10;
@@ -528,7 +528,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(678, 778);
+            this.ClientSize = new System.Drawing.Size(654, 761);
             this.Controls.Add(this.pictureBox35);
             this.Controls.Add(this.pictureBox36);
             this.Controls.Add(this.pictureBox33);
