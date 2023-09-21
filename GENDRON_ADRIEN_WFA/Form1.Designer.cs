@@ -120,7 +120,6 @@
             this.txtscore.TabIndex = 0;
             this.txtscore.Text = "Score : 0";
             this.txtscore.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.txtscore.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // pictureBox1
             // 
@@ -131,7 +130,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "plateform";
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -212,7 +210,6 @@
             this.verticalPlateform.TabIndex = 9;
             this.verticalPlateform.TabStop = false;
             this.verticalPlateform.Tag = "plateform";
-            this.verticalPlateform.Click += new System.EventHandler(this.pictureBox9_Click);
             // 
             // player
             // 
@@ -251,7 +248,6 @@
             this.ennemyTwo.TabIndex = 13;
             this.ennemyTwo.TabStop = false;
             this.ennemyTwo.Tag = "ennemy";
-            this.ennemyTwo.Click += new System.EventHandler(this.ennemyTwo_Click);
             // 
             // pictureBox11
             // 
@@ -342,7 +338,6 @@
             this.pictureBox19.TabIndex = 23;
             this.pictureBox19.TabStop = false;
             this.pictureBox19.Tag = "coin";
-            this.pictureBox19.Click += new System.EventHandler(this.pictureBox19_Click);
             // 
             // pictureBox20
             // 
@@ -363,7 +358,6 @@
             this.pictureBox21.TabIndex = 25;
             this.pictureBox21.TabStop = false;
             this.pictureBox21.Tag = "coin";
-            this.pictureBox21.Click += new System.EventHandler(this.pictureBox21_Click);
             // 
             // pictureBox22
             // 
@@ -404,7 +398,6 @@
             this.pictureBox25.TabIndex = 29;
             this.pictureBox25.TabStop = false;
             this.pictureBox25.Tag = "coin";
-            this.pictureBox25.Click += new System.EventHandler(this.pictureBox25_Click);
             // 
             // pictureBox26
             // 
@@ -415,7 +408,6 @@
             this.pictureBox26.TabIndex = 28;
             this.pictureBox26.TabStop = false;
             this.pictureBox26.Tag = "coin";
-            this.pictureBox26.Click += new System.EventHandler(this.pictureBox26_Click);
             // 
             // pictureBox27
             // 

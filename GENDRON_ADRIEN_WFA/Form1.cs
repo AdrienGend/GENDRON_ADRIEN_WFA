@@ -38,48 +38,59 @@ namespace GENDRON_ADRIEN_WFA
 
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ennemyTwo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox25_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox26_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void MainGameTimerEvent(object sender, EventArgs e)
         {
+            txtscore.Text = "Score: " + score;
+
+            player.Top += jumpSpeed;
+
+            if (goLeft == true)
+            {
+                player.Left -= playerSpeed;
+            }
+            if (goRight == true)
+            {
+                player.Left += playerSpeed;
+            }
+
+            if (jumping == true && force < 0)
+            {
+                jumping = false;
+            }
+
+            if (jumping == true)
+            {
+                jumpSpeed = -8;
+                force -= 1;
+            }
+            else
+            {
+                jumpSpeed = 10;
+            }
+
+            foreach(Control x in this.Controls)
+            {
+                if (x is PictureBox)
+                {
+
+
+                    if ((string)x.Tag == "platform")
+                    {
+                        if (player.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            force = 8;
+                            player.Top = x.Top - player.Height;
+                        }
+                    }
+
+                    x.BringToFront();
+
+
+                }
+            }
+
+
+
 
         }
 
