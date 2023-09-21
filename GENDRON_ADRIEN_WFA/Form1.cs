@@ -21,5 +21,25 @@ namespace GENDRON_ADRIEN_WFA
         {
 
         }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ennemyTwo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
