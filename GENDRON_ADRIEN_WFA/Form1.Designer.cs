@@ -129,7 +129,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(325, 30);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "plateform";
+            this.pictureBox1.Tag = "platform";
             // 
             // pictureBox2
             // 
@@ -139,7 +139,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(196, 30);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Tag = "plateform";
+            this.pictureBox2.Tag = "platform";
             // 
             // pictureBox3
             // 
@@ -149,7 +149,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(118, 30);
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Tag = "plateform";
+            this.pictureBox3.Tag = "platform";
             // 
             // pictureBox4
             // 
@@ -159,7 +159,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(117, 30);
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Tag = "plateform";
+            this.pictureBox4.Tag = "platform";
             // 
             // pictureBox5
             // 
@@ -169,7 +169,7 @@
             this.pictureBox5.Size = new System.Drawing.Size(368, 30);
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
-            this.pictureBox5.Tag = "plateform";
+            this.pictureBox5.Tag = "platform";
             // 
             // pictureBox6
             // 
@@ -179,7 +179,7 @@
             this.pictureBox6.Size = new System.Drawing.Size(118, 30);
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Tag = "plateform";
+            this.pictureBox6.Tag = "platform";
             // 
             // horizontalPlateform
             // 
@@ -189,7 +189,7 @@
             this.horizontalPlateform.Size = new System.Drawing.Size(317, 30);
             this.horizontalPlateform.TabIndex = 7;
             this.horizontalPlateform.TabStop = false;
-            this.horizontalPlateform.Tag = "plateform";
+            this.horizontalPlateform.Tag = "platform";
             // 
             // pictureBox8
             // 
@@ -199,7 +199,7 @@
             this.pictureBox8.Size = new System.Drawing.Size(145, 30);
             this.pictureBox8.TabIndex = 8;
             this.pictureBox8.TabStop = false;
-            this.pictureBox8.Tag = "plateform";
+            this.pictureBox8.Tag = "platform";
             // 
             // verticalPlateform
             // 
@@ -209,7 +209,7 @@
             this.verticalPlateform.Size = new System.Drawing.Size(118, 30);
             this.verticalPlateform.TabIndex = 9;
             this.verticalPlateform.TabStop = false;
-            this.verticalPlateform.Tag = "plateform";
+            this.verticalPlateform.Tag = "platform";
             // 
             // player
             // 
@@ -219,6 +219,7 @@
             this.player.Size = new System.Drawing.Size(30, 40);
             this.player.TabIndex = 10;
             this.player.TabStop = false;
+            this.player.Tag = "player";
             // 
             // pictureBox10
             // 

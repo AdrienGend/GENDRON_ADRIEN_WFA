@@ -106,7 +106,7 @@ namespace GENDRON_ADRIEN_WFA
             }
             if (e.KeyCode == Keys.Space && jumping == false)
             {
-                jumping = true
+                jumping = true;
             }
         }
 
@@ -155,10 +155,10 @@ namespace GENDRON_ADRIEN_WFA
             player.Top = 665;
 
             ennemyOne.Left = 371;
-            ennemyTwo.Left = 381;
+            ennemyTwo.Left = 384;
 
             horizontalPlateform.Left = 167;
-            verticalPlateform.Top = 609;
+            verticalPlateform.Top = 170;
 
             gameTimer.Start();
 
