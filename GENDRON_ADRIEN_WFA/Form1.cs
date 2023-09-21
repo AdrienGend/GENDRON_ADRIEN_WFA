@@ -87,6 +87,25 @@ namespace GENDRON_ADRIEN_WFA
 
 
                 }
+
+                if ((string)x.Tag == "coin")
+                {
+                    if (player.Bounds.IntersectsWith(x.Bounds) && x.Visible == true)
+                    {
+                        x.Visible = false;
+                        score++;
+                    }
+                }
+
+                if (((string)x.Tag == "ennemy"))
+                {
+                    if (player.Bounds.IntersectsWith(x.Bounds))
+                    {
+                        gameTimer.Stop();
+                        isGameOver = true;
+                        txtscore.Text = "score: " + score + Environment.NewLine +
+                    }
+                }
             }
 
 
