@@ -12,6 +12,21 @@ namespace GENDRON_ADRIEN_WFA
 {
     public partial class Form1 : Form
     {
+
+        bool goLeft, goRight, jumping, isGameOver;
+
+        int jumpSpeed;
+        int force;
+        int score = 0;
+        int playerSpeed = 7;
+
+        int horizontalSpeed = 5;
+        int verticalSpeed = 3;
+
+        int ennemyOneSpeed = 5;
+        int ennemyTwoSpeed = 3;
+
+
         public Form1()
         {
             InitializeComponent();
@@ -38,6 +53,46 @@ namespace GENDRON_ADRIEN_WFA
         }
 
         private void ennemyTwo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainGameTimerEvent(object sender, EventArgs e)
+        {
+
+        }
+
+        private void KeyIsDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void KeyIsUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void RestartGame()
         {
 
         }
