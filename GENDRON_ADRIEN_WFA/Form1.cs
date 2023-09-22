@@ -26,6 +26,9 @@ namespace GENDRON_ADRIEN_WFA
         //Pour les ennemies
         int ennemyOneSpeed = 5;
         int ennemyTwoSpeed = 3;
+        bool ennemyOneReverseImg = false;
+        bool ennemyTwoReverseImg = false;
+
 
 
         public Form1()
@@ -140,13 +143,31 @@ namespace GENDRON_ADRIEN_WFA
             if (ennemyOne.Left < pictureBox5.Left || ennemyOne.Left + ennemyOne.Width > pictureBox5.Left + pictureBox5.Width)
             {
                 ennemyOneSpeed = -ennemyOneSpeed;
+                ennemyOneReverseImg = !ennemyOneReverseImg;
+                if (ennemyOneReverseImg)
+                {
+                    ennemyOne.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                }
+                else
+                {
+                    ennemyOne.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                }
             }
 
             ennemyTwo.Left += ennemyTwoSpeed;
 
             if (ennemyTwo.Left < pictureBox2.Left || ennemyTwo.Left + ennemyTwo.Width > pictureBox2.Left + pictureBox2.Width)
             {
-                ennemyTwoSpeed = -ennemyTwoSpeed;
+                ennemyTwoSpeed = -ennemyTwoSpeed; 
+                ennemyTwoReverseImg = !ennemyTwoReverseImg;
+                if (ennemyTwoReverseImg)
+                {
+                    ennemyTwo.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                }
+                else
+                {
+                    ennemyTwo.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                }
             }
             if (player.Bounds.IntersectsWith(door.Bounds) && score == 26)
             {
