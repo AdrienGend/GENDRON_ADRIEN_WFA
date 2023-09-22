@@ -233,7 +233,7 @@
             // ennemyOne
             // 
             this.ennemyOne.BackColor = System.Drawing.Color.Magenta;
-            this.ennemyOne.Location = new System.Drawing.Point(384, 401);
+            this.ennemyOne.Location = new System.Drawing.Point(381, 399);
             this.ennemyOne.Name = "ennemyOne";
             this.ennemyOne.Size = new System.Drawing.Size(30, 40);
             this.ennemyOne.TabIndex = 12;
@@ -243,7 +243,7 @@
             // ennemyTwo
             // 
             this.ennemyTwo.BackColor = System.Drawing.Color.Magenta;
-            this.ennemyTwo.Location = new System.Drawing.Point(376, 628);
+            this.ennemyTwo.Location = new System.Drawing.Point(459, 626);
             this.ennemyTwo.Name = "ennemyTwo";
             this.ennemyTwo.Size = new System.Drawing.Size(30, 40);
             this.ennemyTwo.TabIndex = 13;

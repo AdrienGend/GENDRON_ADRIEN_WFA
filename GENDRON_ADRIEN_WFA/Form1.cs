@@ -80,6 +80,14 @@ namespace GENDRON_ADRIEN_WFA
                         {
                             force = 8;
                             player.Top = x.Top - player.Height;
+
+                            if ((string)x.Name == "horizontalPlateform" && goLeft == false || (string)x.Name == "horizontalPlateform" && goRight == false)
+                            {
+                                player.Left -= horizontalSpeed;
+                            }
+
+
+
                         }
                     }
 
@@ -103,13 +111,38 @@ namespace GENDRON_ADRIEN_WFA
                     {
                         gameTimer.Stop();
                         isGameOver = true;
-                        txtscore.Text = "score: " + score + Environment.NewLine +
+                        txtscore.Text = "score: " + score + Environment.NewLine + "You were killed in your journey !!";
                     }
                 }
             }
 
+            horizontalPlateform.Left -= horizontalSpeed;
 
+            if (horizontalPlateform.Left < 0 || horizontalPlateform.Left + horizontalPlateform.Width > this.ClientSize.Width)
+            {
+                horizontalSpeed = -horizontalSpeed;
+            }
 
+            verticalPlateform.Top += verticalSpeed;
+
+            if (verticalPlateform.Top < 200 || verticalPlateform.Top > 609)
+            {
+                verticalSpeed = -verticalSpeed;
+            }
+
+            ennemyOne.Left -= ennemyOneSpeed;
+
+            if (ennemyOne.Left < pictureBox5.Left || ennemyOne.Left + ennemyOne.Width > pictureBox5.Left + pictureBox5.Width)
+            {
+                ennemyOneSpeed = -ennemyOneSpeed;
+            }
+
+            ennemyTwo.Left += ennemyTwoSpeed;
+
+            if (ennemyTwo.Left < pictureBox2.Left || ennemyTwo.Left + ennemyTwo.Width > pictureBox2.Left + pictureBox2.Width)
+            {
+                ennemyTwoSpeed = -ennemyTwoSpeed;
+            }
 
         }
 
