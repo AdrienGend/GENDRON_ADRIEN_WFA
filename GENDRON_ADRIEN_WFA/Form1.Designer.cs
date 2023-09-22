@@ -40,7 +40,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.verticalPlateform = new System.Windows.Forms.PictureBox();
             this.player = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.door = new System.Windows.Forms.PictureBox();
             this.ennemyOne = new System.Windows.Forms.PictureBox();
             this.ennemyTwo = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -80,7 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.verticalPlateform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.door)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ennemyOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ennemyTwo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -221,14 +221,14 @@
             this.player.TabStop = false;
             this.player.Tag = "player";
             // 
-            // pictureBox10
+            // door
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.DarkGreen;
-            this.pictureBox10.Location = new System.Drawing.Point(12, 31);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(30, 50);
-            this.pictureBox10.TabIndex = 11;
-            this.pictureBox10.TabStop = false;
+            this.door.BackColor = System.Drawing.Color.DarkGreen;
+            this.door.Location = new System.Drawing.Point(12, 31);
+            this.door.Name = "door";
+            this.door.Size = new System.Drawing.Size(30, 50);
+            this.door.TabIndex = 11;
+            this.door.TabStop = false;
             // 
             // ennemyOne
             // 
@@ -550,7 +550,7 @@
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.ennemyTwo);
             this.Controls.Add(this.ennemyOne);
-            this.Controls.Add(this.pictureBox10);
+            this.Controls.Add(this.door);
             this.Controls.Add(this.player);
             this.Controls.Add(this.verticalPlateform);
             this.Controls.Add(this.pictureBox8);
@@ -577,7 +577,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.verticalPlateform)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.door)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ennemyOne)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ennemyTwo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
@@ -623,7 +623,7 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox verticalPlateform;
         private System.Windows.Forms.PictureBox player;
-        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox door;
         private System.Windows.Forms.PictureBox ennemyOne;
         private System.Windows.Forms.PictureBox ennemyTwo;
         private System.Windows.Forms.PictureBox pictureBox11;

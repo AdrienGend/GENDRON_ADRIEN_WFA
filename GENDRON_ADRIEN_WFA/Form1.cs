@@ -68,12 +68,10 @@ namespace GENDRON_ADRIEN_WFA
                 jumpSpeed = 10;
             }
 
-            foreach(Control x in this.Controls)
+            foreach (Control x in this.Controls)
             {
                 if (x is PictureBox)
                 {
-
-
                     if ((string)x.Tag == "platform")
                     {
                         if (player.Bounds.IntersectsWith(x.Bounds))
@@ -85,33 +83,40 @@ namespace GENDRON_ADRIEN_WFA
                             {
                                 player.Left -= horizontalSpeed;
                             }
-
-
-
                         }
                     }
-
-                    x.BringToFront();
-
-
                 }
+            }
 
-                if ((string)x.Tag == "coin")
+            // Vérification des collisions avec les pièces (coins)
+            foreach (Control x in this.Controls)
+            {
+                if (x is PictureBox)
                 {
-                    if (player.Bounds.IntersectsWith(x.Bounds) && x.Visible == true)
+                    if ((string)x.Tag == "coin")
                     {
-                        x.Visible = false;
-                        score++;
+                        if (player.Bounds.IntersectsWith(x.Bounds) && x.Visible == true)
+                        {
+                            x.Visible = false;
+                            score++;
+                        }
                     }
                 }
+            }
 
-                if (((string)x.Tag == "ennemy"))
+            // Vérification des collisions avec les ennemis
+            foreach (Control x in this.Controls)
+            {
+                if (x is PictureBox)
                 {
-                    if (player.Bounds.IntersectsWith(x.Bounds))
+                    if ((string)x.Tag == "ennemy")
                     {
-                        gameTimer.Stop();
-                        isGameOver = true;
-                        txtscore.Text = "score: " + score + Environment.NewLine + "You were killed in your journey !!";
+                        if (player.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            gameTimer.Stop();
+                            isGameOver = true;
+                            txtscore.Text = "Score: " + score + Environment.NewLine + "You were killed in your journey !!";
+                        }
                     }
                 }
             }
@@ -143,8 +148,26 @@ namespace GENDRON_ADRIEN_WFA
             {
                 ennemyTwoSpeed = -ennemyTwoSpeed;
             }
+            if (player.Bounds.IntersectsWith(door.Bounds) && score == 26)
+            {
+                gameTimer.Stop();
+                isGameOver = true;
+                txtscore.Text = "Score: " + score + Environment.NewLine + "You won the game !!";
+            }
+            else
+            {
+                txtscore.Text = "Score: " + score + Environment.NewLine + "You need to collect all the coins !!";
+                if (player.Top + player.Height > this.ClientSize.Height + 50)
+                {
+                    txtscore.Text = "Score: " + score + Environment.NewLine + "You fell in the void !!";
+                    gameTimer.Stop();
+                    isGameOver = true;
+                }
 
+            }
         }
+
+
 
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
@@ -201,20 +224,18 @@ namespace GENDRON_ADRIEN_WFA
                 }
             }
 
-
-
             player.Left = 60;
             player.Top = 665;
 
             ennemyOne.Left = 371;
             ennemyTwo.Left = 384;
 
-            horizontalPlateform.Left = 167;
-            verticalPlateform.Top = 170;
+            // Réinitialisez la position de la plateforme verticale à un emplacement approprié.
+            verticalPlateform.Left = 524; // Changez cette valeur en fonction de votre jeu.
+            verticalPlateform.Top = 609;  // Changez cette valeur en fonction de votre jeu.
 
+            // Redémarrez le gameTimer ici
             gameTimer.Start();
-
-
         }
     }
 }
