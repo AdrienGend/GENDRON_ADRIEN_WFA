@@ -114,6 +114,7 @@
             // 
             // txtscore
             // 
+            this.txtscore.BackColor = System.Drawing.Color.Transparent;
             this.txtscore.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtscore.Location = new System.Drawing.Point(380, 9);
             this.txtscore.Name = "txtscore";
@@ -477,7 +478,9 @@
             // 
             // player
             // 
-            this.player.BackColor = System.Drawing.Color.DarkBlue;
+            this.player.BackColor = System.Drawing.Color.Transparent;
+            this.player.BackgroundImage = global::GENDRON_ADRIEN_WFA.Properties.Resources.mario_removebg_preview;
+            this.player.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.player.Location = new System.Drawing.Point(60, 665);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(30, 40);
@@ -488,6 +491,7 @@
             // verticalPlateform
             // 
             this.verticalPlateform.BackColor = System.Drawing.Color.Brown;
+            this.verticalPlateform.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("verticalPlateform.BackgroundImage")));
             this.verticalPlateform.Location = new System.Drawing.Point(524, 609);
             this.verticalPlateform.Name = "verticalPlateform";
             this.verticalPlateform.Size = new System.Drawing.Size(118, 30);
@@ -498,6 +502,7 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox8.BackgroundImage")));
             this.pictureBox8.Location = new System.Drawing.Point(-5, 78);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(145, 30);
@@ -508,6 +513,7 @@
             // horizontalPlateform
             // 
             this.horizontalPlateform.BackColor = System.Drawing.Color.Brown;
+            this.horizontalPlateform.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("horizontalPlateform.BackgroundImage")));
             this.horizontalPlateform.Location = new System.Drawing.Point(167, 170);
             this.horizontalPlateform.Name = "horizontalPlateform";
             this.horizontalPlateform.Size = new System.Drawing.Size(317, 30);
@@ -518,6 +524,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
             this.pictureBox6.Location = new System.Drawing.Point(23, 324);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(118, 30);
@@ -528,6 +535,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox5.BackgroundImage = global::GENDRON_ADRIEN_WFA.Properties.Resources.dirt__Personnalisé_;
             this.pictureBox5.Location = new System.Drawing.Point(150, 438);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(368, 30);
@@ -538,6 +546,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.Location = new System.Drawing.Point(23, 540);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(117, 30);
@@ -548,6 +557,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.Location = new System.Drawing.Point(150, 609);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(118, 30);
@@ -558,6 +568,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.Location = new System.Drawing.Point(304, 665);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(196, 30);
@@ -568,6 +579,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.Location = new System.Drawing.Point(-5, 737);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(325, 30);
@@ -580,6 +592,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(654, 761);
             this.Controls.Add(this.ennemyTwo);
             this.Controls.Add(this.ennemyOne);

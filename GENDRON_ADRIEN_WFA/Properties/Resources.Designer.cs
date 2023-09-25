@@ -63,6 +63,16 @@ namespace GENDRON_ADRIEN_WFA.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dirt__Personnalisé_ {
+            get {
+                object obj = ResourceManager.GetObject("dirt (Personnalisé)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dollar_Gold_Coin_PNG__Personnalisé_ {
             get {
                 object obj = ResourceManager.GetObject("Dollar-Gold-Coin-PNG (Personnalisé)", resourceCulture);
@@ -96,6 +106,26 @@ namespace GENDRON_ADRIEN_WFA.Properties {
         internal static System.Drawing.Bitmap koopaiverse {
             get {
                 object obj = ResourceManager.GetObject("koopaiverse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mario {
+            get {
+                object obj = ResourceManager.GetObject("mario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mario_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("mario-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
