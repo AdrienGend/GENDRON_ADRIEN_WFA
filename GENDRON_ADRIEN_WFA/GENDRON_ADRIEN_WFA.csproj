@@ -98,5 +98,14 @@
   <ItemGroup>
     <None Include="img\mario-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\porte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\blackhole-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\musicpokemon.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media; // Pour utiliser SoundPlayer
 
 namespace GENDRON_ADRIEN_WFA
 {
@@ -14,26 +15,33 @@ namespace GENDRON_ADRIEN_WFA
     {
 
         bool goLeft, goRight, jumping, isGameOver;
-        
+
         //Pour le joueur
         int jumpSpeed;
         int force;
         int score = 0;
         int playerSpeed = 7;
-        //Pour les plateforme
+        //Pour les plateformes
         int horizontalSpeed = 5;
         int verticalSpeed = 3;
-        //Pour les ennemies
+        //Pour les ennemis
         int ennemyOneSpeed = 5;
         int ennemyTwoSpeed = 3;
         bool ennemyOneReverseImg = false;
         bool ennemyTwoReverseImg = false;
+        bool music = false;
 
-
+        // Ajoutez une variable de classe pour représenter le lecteur de musique SoundPlayer
+        SoundPlayer backgroundMusicPlayer;
 
         public Form1()
         {
             InitializeComponent();
+
+            // Initialisez le lecteur de musique
+            backgroundMusicPlayer = new SoundPlayer(Properties.Resources.musicpokemon);
+           // Répétez la musique en continu
+            backgroundMusicPlayer.PlayLooping();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -257,6 +265,9 @@ namespace GENDRON_ADRIEN_WFA
 
             // Redémarrez le gameTimer ici
             gameTimer.Start();
+
+            // Arrêtez la musique lorsque le jeu se termine
+            backgroundMusicPlayer.Stop();
         }
     }
 }

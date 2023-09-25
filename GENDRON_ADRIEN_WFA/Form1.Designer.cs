@@ -469,8 +469,10 @@
             // 
             // door
             // 
-            this.door.BackColor = System.Drawing.Color.DarkGreen;
-            this.door.Location = new System.Drawing.Point(12, 31);
+            this.door.BackColor = System.Drawing.Color.Transparent;
+            this.door.BackgroundImage = global::GENDRON_ADRIEN_WFA.Properties.Resources.blackhole_removebg_preview;
+            this.door.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.door.Location = new System.Drawing.Point(12, 26);
             this.door.Name = "door";
             this.door.Size = new System.Drawing.Size(30, 50);
             this.door.TabIndex = 11;
@@ -634,6 +636,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtscore);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

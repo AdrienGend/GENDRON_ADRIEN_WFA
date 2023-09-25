@@ -63,6 +63,16 @@ namespace GENDRON_ADRIEN_WFA.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blackhole_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("blackhole-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dirt__Personnalisé_ {
             get {
                 object obj = ResourceManager.GetObject("dirt (Personnalisé)", resourceCulture);
@@ -126,6 +136,35 @@ namespace GENDRON_ADRIEN_WFA.Properties {
         internal static System.Drawing.Bitmap mario_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("mario-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.IO.UnmanagedMemoryStream semblable à System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream musicpokemon {
+            get {
+                return ResourceManager.GetStream("musicpokemon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap porte {
+            get {
+                object obj = ResourceManager.GetObject("porte", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap porte1 {
+            get {
+                object obj = ResourceManager.GetObject("porte1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
