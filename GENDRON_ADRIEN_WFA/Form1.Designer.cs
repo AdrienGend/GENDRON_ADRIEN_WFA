@@ -116,6 +116,7 @@
             // 
             this.txtscore.BackColor = System.Drawing.Color.Transparent;
             this.txtscore.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtscore.ForeColor = System.Drawing.Color.SpringGreen;
             this.txtscore.Location = new System.Drawing.Point(380, 9);
             this.txtscore.Name = "txtscore";
             this.txtscore.Size = new System.Drawing.Size(274, 84);
@@ -470,11 +471,11 @@
             // door
             // 
             this.door.BackColor = System.Drawing.Color.Transparent;
-            this.door.BackgroundImage = global::GENDRON_ADRIEN_WFA.Properties.Resources.blackhole_removebg_preview;
+            this.door.BackgroundImage = global::GENDRON_ADRIEN_WFA.Properties.Resources.chest;
             this.door.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.door.Location = new System.Drawing.Point(12, 26);
+            this.door.Location = new System.Drawing.Point(12, 31);
             this.door.Name = "door";
-            this.door.Size = new System.Drawing.Size(30, 50);
+            this.door.Size = new System.Drawing.Size(40, 50);
             this.door.TabIndex = 11;
             this.door.TabStop = false;
             // 
@@ -594,6 +595,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
+            this.BackgroundImage = global::GENDRON_ADRIEN_WFA.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(654, 761);
             this.Controls.Add(this.ennemyTwo);

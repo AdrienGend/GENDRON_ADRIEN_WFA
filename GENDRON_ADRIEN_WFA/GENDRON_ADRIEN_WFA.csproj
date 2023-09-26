@@ -107,5 +107,11 @@
   <ItemGroup>
     <None Include="Resources\musicpokemon.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\chest.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

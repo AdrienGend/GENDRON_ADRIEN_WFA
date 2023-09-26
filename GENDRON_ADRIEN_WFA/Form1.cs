@@ -21,6 +21,7 @@ namespace GENDRON_ADRIEN_WFA
         int force;
         int score = 0;
         int playerSpeed = 7;
+        bool canJump = true;
         //Pour les plateformes
         int horizontalSpeed = 5;
         int verticalSpeed = 3;
@@ -30,6 +31,7 @@ namespace GENDRON_ADRIEN_WFA
         bool ennemyOneReverseImg = false;
         bool ennemyTwoReverseImg = false;
         bool music = false;
+
 
         // Ajoutez une variable de classe pour représenter le lecteur de musique SoundPlayer
         SoundPlayer backgroundMusicPlayer;
@@ -79,25 +81,47 @@ namespace GENDRON_ADRIEN_WFA
                 jumpSpeed = 10;
             }
 
+            // Vérification des collisions avec les plateformes
             foreach (Control x in this.Controls)
             {
-                if (x is PictureBox)
+                if (x is PictureBox && (string)x.Tag == "platform")
                 {
-                    if ((string)x.Tag == "platform")
+                    if (player.Bounds.IntersectsWith(x.Bounds))
                     {
-                        if (player.Bounds.IntersectsWith(x.Bounds))
+                        force = 8;
+
+                        // Empêcher le joueur de passer à travers la plate-forme en haut
+                        if (player.Bottom > x.Top && player.Top < x.Top)
+                        {
+                            player.Top = x.Top - player.Height;
+                            jumping = false; // Arrêtez le saut lorsque le joueur touche la plate-forme
+                            canJump = true; // Le joueur peut sauter à nouveau
+                        }
+
+                        if ((string)x.Name == "horizontalPlateform" && goLeft == false)
+                        {
+                            goRight = false;
+                        }
+                        else if ((string)x.Name == "horizontalPlateform" && goRight == false)
+                        {
+                            goLeft = false;
+                        }
+
+                        // Réinitialisez la vitesse de saut lorsque le joueur touche une plate-forme
+                        if (jumping == false)
                         {
                             force = 8;
-                            player.Top = x.Top - player.Height;
-
-                            if ((string)x.Name == "horizontalPlateform" && goLeft == false || (string)x.Name == "horizontalPlateform" && goRight == false)
-                            {
-                                player.Left -= horizontalSpeed;
-                            }
                         }
+                        else
+                        {
+                            force = -8;
+                        }
+                       
                     }
                 }
             }
+
+
 
             // Vérification des collisions avec les pièces (coins)
             foreach (Control x in this.Controls)
@@ -208,11 +232,14 @@ namespace GENDRON_ADRIEN_WFA
             {
                 goRight = true;
             }
-            if (e.KeyCode == Keys.Space && jumping == false)
+            if (e.KeyCode == Keys.Space && canJump)
             {
                 jumping = true;
+                canJump = false;
+                jumpSpeed = 0; // Mettez à jour la vitesse de saut ici
             }
         }
+
 
         private void KeyIsUp(object sender, KeyEventArgs e)
         {
