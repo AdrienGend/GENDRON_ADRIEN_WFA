@@ -51,6 +51,12 @@ namespace GENDRON_ADRIEN_WFA
         {
 
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // Ferme l'application lorsque l'utilisateur ferme la fenêtre
+        }
+
         private void MainGameTimerEvent(object sender, EventArgs e)
         {
             txtscore.Text = "Score: " + score;
