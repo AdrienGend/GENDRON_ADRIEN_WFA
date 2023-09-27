@@ -71,6 +71,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Ladder = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ennemyTwo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ennemyOne)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
@@ -110,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ladder)).BeginInit();
             this.SuspendLayout();
             // 
             // txtscore
@@ -293,7 +295,7 @@
             this.pictureBox26.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox26.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox26.BackgroundImage")));
             this.pictureBox26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox26.Location = new System.Drawing.Point(105, 293);
+            this.pictureBox26.Location = new System.Drawing.Point(115, 293);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(25, 25);
             this.pictureBox26.TabIndex = 28;
@@ -305,7 +307,7 @@
             this.pictureBox23.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox23.BackgroundImage")));
             this.pictureBox23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox23.Location = new System.Drawing.Point(74, 293);
+            this.pictureBox23.Location = new System.Drawing.Point(84, 293);
             this.pictureBox23.Name = "pictureBox23";
             this.pictureBox23.Size = new System.Drawing.Size(25, 25);
             this.pictureBox23.TabIndex = 27;
@@ -317,7 +319,7 @@
             this.pictureBox24.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox24.BackgroundImage")));
             this.pictureBox24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox24.Location = new System.Drawing.Point(43, 293);
+            this.pictureBox24.Location = new System.Drawing.Point(53, 293);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(25, 25);
             this.pictureBox24.TabIndex = 26;
@@ -329,7 +331,7 @@
             this.pictureBox21.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox21.BackgroundImage")));
             this.pictureBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox21.Location = new System.Drawing.Point(74, 509);
+            this.pictureBox21.Location = new System.Drawing.Point(79, 509);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(25, 25);
             this.pictureBox21.TabIndex = 25;
@@ -341,7 +343,7 @@
             this.pictureBox22.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox22.BackgroundImage")));
             this.pictureBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox22.Location = new System.Drawing.Point(43, 509);
+            this.pictureBox22.Location = new System.Drawing.Point(48, 509);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(25, 25);
             this.pictureBox22.TabIndex = 24;
@@ -353,7 +355,7 @@
             this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox19.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox19.BackgroundImage")));
             this.pictureBox19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox19.Location = new System.Drawing.Point(105, 509);
+            this.pictureBox19.Location = new System.Drawing.Point(115, 509);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(25, 25);
             this.pictureBox19.TabIndex = 23;
@@ -528,7 +530,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Brown;
             this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
-            this.pictureBox6.Location = new System.Drawing.Point(23, 324);
+            this.pictureBox6.Location = new System.Drawing.Point(28, 324);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(118, 30);
             this.pictureBox6.TabIndex = 6;
@@ -550,9 +552,9 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Brown;
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(23, 540);
+            this.pictureBox4.Location = new System.Drawing.Point(-5, 540);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(117, 30);
+            this.pictureBox4.Size = new System.Drawing.Size(145, 30);
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Tag = "platform";
@@ -589,6 +591,18 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "platform";
+            // 
+            // Ladder
+            // 
+            this.Ladder.BackColor = System.Drawing.Color.Transparent;
+            this.Ladder.BackgroundImage = global::GENDRON_ADRIEN_WFA.Properties.Resources.ladder_removebg_preview;
+            this.Ladder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Ladder.Location = new System.Drawing.Point(1, 314);
+            this.Ladder.Name = "Ladder";
+            this.Ladder.Size = new System.Drawing.Size(27, 227);
+            this.Ladder.TabIndex = 40;
+            this.Ladder.TabStop = false;
+            this.Ladder.Tag = "ladder";
             // 
             // Form1
             // 
@@ -638,6 +652,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtscore);
+            this.Controls.Add(this.Ladder);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
@@ -684,6 +699,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ladder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -731,6 +747,7 @@
         private System.Windows.Forms.PictureBox pictureBox35;
         private System.Windows.Forms.PictureBox pictureBox36;
         private System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.PictureBox Ladder;
     }
 }
 

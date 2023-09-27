@@ -14,7 +14,7 @@ namespace GENDRON_ADRIEN_WFA
     public partial class Form1 : Form
     {
 
-        bool goLeft, goRight, jumping, isGameOver;
+        bool goLeft, goRight, jumping, isGameOver, onLadder;
 
         //Pour le joueur
         int jumpSpeed;
@@ -31,6 +31,7 @@ namespace GENDRON_ADRIEN_WFA
         bool ennemyOneReverseImg = false;
         bool ennemyTwoReverseImg = false;
         bool music = false;
+        
 
 
         // Ajoutez une variable de classe pour représenter le lecteur de musique SoundPlayer
@@ -98,15 +99,6 @@ namespace GENDRON_ADRIEN_WFA
                             canJump = true; // Le joueur peut sauter à nouveau
                         }
 
-                        if ((string)x.Name == "horizontalPlateform" && goLeft == false)
-                        {
-                            goRight = false;
-                        }
-                        else if ((string)x.Name == "horizontalPlateform" && goRight == false)
-                        {
-                            goLeft = false;
-                        }
-
                         // Réinitialisez la vitesse de saut lorsque le joueur touche une plate-forme
                         if (jumping == false)
                         {
@@ -120,8 +112,6 @@ namespace GENDRON_ADRIEN_WFA
                     }
                 }
             }
-
-
 
             // Vérification des collisions avec les pièces (coins)
             foreach (Control x in this.Controls)
@@ -152,6 +142,24 @@ namespace GENDRON_ADRIEN_WFA
                             isGameOver = true;
                             txtscore.Text = "Score: " + score + Environment.NewLine + "You were killed in your journey !!";
                         }
+                    }
+                }
+            }
+
+            // Vérification des collisions avec l'échelle (ladder)
+            foreach (Control x in this.Controls)
+            {
+                if (x is PictureBox && (string)x.Tag == "ladder")
+                {
+                    if (player.Bounds.IntersectsWith(x.Bounds))
+                    {
+                        onLadder = true; // Le joueur est sur l'échelle
+                        playerSpeed = 7; // Réglez la vitesse de montée/descente
+                    }
+                    else
+                    {
+                        onLadder = false; // Le joueur n'est pas sur l'échelle
+                        playerSpeed = 7; // Réglez la vitesse du joueur en dehors de l'échelle
                     }
                 }
             }
@@ -220,8 +228,6 @@ namespace GENDRON_ADRIEN_WFA
             }
         }
 
-
-
         private void KeyIsDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
@@ -236,7 +242,13 @@ namespace GENDRON_ADRIEN_WFA
             {
                 jumping = true;
                 canJump = false;
-                jumpSpeed = 0; // Mettez à jour la vitesse de saut ici
+                jumpSpeed = -8;
+            }
+
+            // Si le joueur est sur l'échelle et maintient la touche d'espace enfoncée, il monte.
+            if (onLadder && e.KeyCode == Keys.Space)
+            {
+                jumpSpeed = -8; // Ajustez la vitesse de montée si nécessaire.
             }
         }
 
@@ -251,9 +263,12 @@ namespace GENDRON_ADRIEN_WFA
             {
                 goRight = false;
             }
-            if (jumping == true)
+            if (e.KeyCode == Keys.Space)
             {
                 jumping = false;
+                jumpSpeed = 10;
+
+                // Ne réinitialisez pas la vitesse du joueur ici.
             }
 
             if (e.KeyCode == Keys.Enter && isGameOver == true)
@@ -261,6 +276,7 @@ namespace GENDRON_ADRIEN_WFA
                 RestartGame();
             }
         }
+
 
         private void RestartGame()
         {

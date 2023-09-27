@@ -113,5 +113,11 @@
   <ItemGroup>
     <None Include="img\chest.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\ladder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\ladder-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
