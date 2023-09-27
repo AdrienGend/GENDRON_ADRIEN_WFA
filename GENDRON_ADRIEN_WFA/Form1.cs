@@ -51,7 +51,6 @@ namespace GENDRON_ADRIEN_WFA
         {
 
         }
-
         private void MainGameTimerEvent(object sender, EventArgs e)
         {
             txtscore.Text = "Score: " + score;
@@ -132,12 +131,24 @@ namespace GENDRON_ADRIEN_WFA
             // Vérification des collisions avec les ennemis
             foreach (Control x in this.Controls)
             {
-                if (x is PictureBox)
+                if (x is PictureBox && (string)x.Tag == "ennemy")
                 {
-                    if ((string)x.Tag == "ennemy")
+                    if (player.Bounds.IntersectsWith(x.Bounds))
                     {
-                        if (player.Bounds.IntersectsWith(x.Bounds))
+                        // Vérifiez si le joueur est en train de descendre (pour tuer l'ennemi) et s'il est au-dessus de l'ennemi
+                        if (jumpSpeed > 0 && player.Bottom < x.Bottom)
                         {
+                            // L'ennemi est tué, vous pouvez le supprimer
+                            x.Tag = "dead";
+                            x.Hide();
+                           // Augmentez le score
+                            score++;
+                            // Réinitialisez la vitesse de saut lorsque le joueur saute sur l'ennemi
+                            jumpSpeed = -8;
+                        }
+                        else
+                        {
+                            // Le joueur n'a pas sauté au-dessus de l'ennemi, il est touché par l'ennemi
                             gameTimer.Stop();
                             isGameOver = true;
                             txtscore.Text = "Score: " + score + Environment.NewLine + "You were killed in your journey !!";
@@ -145,6 +156,7 @@ namespace GENDRON_ADRIEN_WFA
                     }
                 }
             }
+
 
             // Vérification des collisions avec l'échelle (ladder)
             foreach (Control x in this.Controls)
@@ -209,7 +221,7 @@ namespace GENDRON_ADRIEN_WFA
                     ennemyTwo.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 }
             }
-            if (player.Bounds.IntersectsWith(door.Bounds) && score == 26)
+            if (player.Bounds.IntersectsWith(door.Bounds) && score >= 26)
             {
                 gameTimer.Stop();
                 isGameOver = true;
@@ -311,6 +323,9 @@ namespace GENDRON_ADRIEN_WFA
 
             // Arrêtez la musique lorsque le jeu se termine
             backgroundMusicPlayer.Stop();
+
+            ennemyOne.Tag = "ennemy";
+            ennemyTwo.Tag = "ennemy";
         }
     }
 }
