@@ -1,14 +1,14 @@
-###Projet WFA###
+# Projet WFA
 
 -Voici mon projet de jeu de type plateforme "Retro Runner", réalisé en C# dans le cadre d'un exercice de cours.
 -Le but du jeu est d'atteindre le coffre en récupérant toutes les pièces tout en évitant ou en tuant les ennemis.
 
-##Lancement du jeu##
+## Lancement du jeu
 
 Le jeu ne dispose actuellement que d'un seul niveau jouable.
 Au démarrage du programme, un menu s'affichera, vous permettant de jouer en cliquant sur "Jouer".
 
-##Fonctionnalités##
+## Fonctionnalités
 
 Pour vous déplacer, utilisez les touches directionnelles ainsi que la touche espace pour sauter entre les différentes plateformes.
 
@@ -16,7 +16,7 @@ En chemin, vous rencontrerez des monstres qui vous tueront si vous les touchez, 
 
 Pour récupérer les pièces, il vous suffit de les ramasser. Chaque pièce récupérée augmentera votre score et vous rapprochera de la victoire. Vous devez récupérer toutes les pièces !
 
-##Gestion du projet##
+## Gestion du projet
 
 Mercredi 20/09/2023 : J'ai recherché des informations sur le C# et les jeux de plateforme en général, et j'ai créé mon compte GitHub.
 
