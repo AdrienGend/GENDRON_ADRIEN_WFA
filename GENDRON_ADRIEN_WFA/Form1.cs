@@ -11,24 +11,24 @@ using System.Media; // Pour utiliser SoundPlayer
 
 namespace GENDRON_ADRIEN_WFA
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form 
     {
 
         bool goLeft, goRight, jumping, isGameOver, onLadder;
 
         //Pour le joueur
-        int jumpSpeed;
-        int force;
+        int jumpSpeed; // Vitesse de saut
+        int force; // Force de saut
         int score = 0;
         int playerSpeed = 7;
-        bool canJump = true;
+        bool canJump = true; // Pour empêcher le joueur de sauter plusieurs fois en l'air
         //Pour les plateformes
         int horizontalSpeed = 5;
         int verticalSpeed = 3;
         //Pour les ennemis
         int ennemyOneSpeed = 5;
         int ennemyTwoSpeed = 3;
-        bool ennemyOneReverseImg = false;
+        bool ennemyOneReverseImg = false; // Pour inverser l'image de l'ennemi
         bool ennemyTwoReverseImg = false;
         bool music = false;
         
@@ -39,7 +39,7 @@ namespace GENDRON_ADRIEN_WFA
 
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(); // Initialisez les composants de la fenêtre
 
             // Initialisez le lecteur de musique
             backgroundMusicPlayer = new SoundPlayer(Properties.Resources.musicpokemon);
@@ -59,25 +59,25 @@ namespace GENDRON_ADRIEN_WFA
 
         private void MainGameTimerEvent(object sender, EventArgs e)
         {
-            txtscore.Text = "Score: " + score;
+            txtscore.Text = "Score: " + score; // Affichez le score
 
-            player.Top += jumpSpeed;
+            player.Top += jumpSpeed; 
 
-            if (goLeft == true)
+            if (goLeft == true) // Si le joueur va à gauche
             {
                 player.Left -= playerSpeed;
             }
-            if (goRight == true)
+            if (goRight == true) // Si le joueur va à droite
             {
                 player.Left += playerSpeed;
             }
 
-            if (jumping == true && force < 0)
+            if (jumping == true && force < 0) 
             {
                 jumping = false;
             }
 
-            if (jumping == true)
+            if (jumping == true) // Si le joueur saute
             {
                 jumpSpeed = -8;
                 force -= 1;
@@ -90,14 +90,14 @@ namespace GENDRON_ADRIEN_WFA
             // Vérification des collisions avec les plateformes
             foreach (Control x in this.Controls)
             {
-                if (x is PictureBox && (string)x.Tag == "platform")
+                if (x is PictureBox && (string)x.Tag == "platform") // Si le contrôle est un PictureBox et a le tag "platform"
                 {
-                    if (player.Bounds.IntersectsWith(x.Bounds))
+                    if (player.Bounds.IntersectsWith(x.Bounds)) // Si le joueur touche la plate-forme
                     {
-                        force = 8;
+                        force = 8; 
 
                         // Empêcher le joueur de passer à travers la plate-forme en haut
-                        if (player.Bottom > x.Top && player.Top < x.Top)
+                        if (player.Bottom > x.Top && player.Top < x.Top) 
                         {
                             player.Top = x.Top - player.Height;
                             jumping = false; // Arrêtez le saut lorsque le joueur touche la plate-forme
@@ -105,13 +105,13 @@ namespace GENDRON_ADRIEN_WFA
                         }
 
                         // Réinitialisez la vitesse de saut lorsque le joueur touche une plate-forme
-                        if (jumping == false)
+                        if (jumping == false) // Si le joueur ne saute pas
                         {
-                            force = 8;
+                            force = 8; 
                         }
-                        else
+                        else // Si le joueur touche la plate-forme en sautant
                         {
-                            force = -8;
+                            force = -8; 
                         }
                        
                     }
@@ -121,11 +121,11 @@ namespace GENDRON_ADRIEN_WFA
             // Vérification des collisions avec les pièces (coins)
             foreach (Control x in this.Controls)
             {
-                if (x is PictureBox)
+                if (x is PictureBox) 
                 {
-                    if ((string)x.Tag == "coin")
+                    if ((string)x.Tag == "coin") 
                     {
-                        if (player.Bounds.IntersectsWith(x.Bounds) && x.Visible == true)
+                        if (player.Bounds.IntersectsWith(x.Bounds) && x.Visible == true) // Si le joueur touche la pièce
                         {
                             x.Visible = false;
                             score++;
@@ -137,9 +137,9 @@ namespace GENDRON_ADRIEN_WFA
             // Vérification des collisions avec les ennemis
             foreach (Control x in this.Controls)
             {
-                if (x is PictureBox && (string)x.Tag == "ennemy")
+                if (x is PictureBox && (string)x.Tag == "ennemy") 
                 {
-                    if (player.Bounds.IntersectsWith(x.Bounds))
+                    if (player.Bounds.IntersectsWith(x.Bounds)) // Si le joueur touche l'ennemis
                     {
                         // Vérifiez si le joueur est en train de descendre (pour tuer l'ennemi) et s'il est au-dessus de l'ennemi
                         if (jumpSpeed > 0 && player.Bottom < x.Bottom)
@@ -169,7 +169,7 @@ namespace GENDRON_ADRIEN_WFA
             {
                 if (x is PictureBox && (string)x.Tag == "ladder")
                 {
-                    if (player.Bounds.IntersectsWith(x.Bounds))
+                    if (player.Bounds.IntersectsWith(x.Bounds)) // Si le joueur touche l'échelle
                     {
                         onLadder = true; // Le joueur est sur l'échelle
                         playerSpeed = 7; // Réglez la vitesse de montée/descente
@@ -184,29 +184,29 @@ namespace GENDRON_ADRIEN_WFA
 
             horizontalPlateform.Left -= horizontalSpeed;
 
-            if (horizontalPlateform.Left < 0 || horizontalPlateform.Left + horizontalPlateform.Width > this.ClientSize.Width)
+            if (horizontalPlateform.Left < 0 || horizontalPlateform.Left + horizontalPlateform.Width > this.ClientSize.Width) // Si la plate-forme horizontale touche le bord de la fenêtre
             {
                 horizontalSpeed = -horizontalSpeed;
             }
 
             verticalPlateform.Top += verticalSpeed;
 
-            if (verticalPlateform.Top < 200 || verticalPlateform.Top > 609)
+            if (verticalPlateform.Top < 200 || verticalPlateform.Top > 609) // Si la plate-forme verticale touche le bord de la fenêtre
             {
                 verticalSpeed = -verticalSpeed;
             }
 
             ennemyOne.Left -= ennemyOneSpeed;
 
-            if (ennemyOne.Left < pictureBox5.Left || ennemyOne.Left + ennemyOne.Width > pictureBox5.Left + pictureBox5.Width)
+            if (ennemyOne.Left < pictureBox5.Left || ennemyOne.Left + ennemyOne.Width > pictureBox5.Left + pictureBox5.Width) // Si l'ennemi touche le bord de la plate-forme
             {
                 ennemyOneSpeed = -ennemyOneSpeed;
                 ennemyOneReverseImg = !ennemyOneReverseImg;
-                if (ennemyOneReverseImg)
+                if (ennemyOneReverseImg) // Inversez l'image de l'ennemi
                 {
                     ennemyOne.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 }
-                else
+                else // Inversez l'image de l'ennemi
                 {
                     ennemyOne.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 }
@@ -214,29 +214,29 @@ namespace GENDRON_ADRIEN_WFA
 
             ennemyTwo.Left += ennemyTwoSpeed;
 
-            if (ennemyTwo.Left < pictureBox2.Left || ennemyTwo.Left + ennemyTwo.Width > pictureBox2.Left + pictureBox2.Width)
+            if (ennemyTwo.Left < pictureBox2.Left || ennemyTwo.Left + ennemyTwo.Width > pictureBox2.Left + pictureBox2.Width) // Si l'ennemi touche le bord de la plate-forme
             {
                 ennemyTwoSpeed = -ennemyTwoSpeed; 
                 ennemyTwoReverseImg = !ennemyTwoReverseImg;
                 if (ennemyTwoReverseImg)
                 {
-                    ennemyTwo.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+                    ennemyTwo.Image.RotateFlip(RotateFlipType.RotateNoneFlipX); // Inversez l'image de l'ennemi
                 }
                 else
                 {
                     ennemyTwo.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
                 }
             }
-            if (player.Bounds.IntersectsWith(door.Bounds) && score >= 26)
+            if (player.Bounds.IntersectsWith(door.Bounds) && score >= 26) // Si le joueur touche la porte et a collecté toutes les pièces
             {
                 gameTimer.Stop();
-                isGameOver = true;
+                isGameOver = true; 
                 txtscore.Text = "Score: " + score + Environment.NewLine + "You won the game !!";
             }
             else
             {
                 txtscore.Text = "Score: " + score + Environment.NewLine + "You need to collect all the coins !!";
-                if (player.Top + player.Height > this.ClientSize.Height + 50)
+                if (player.Top + player.Height > this.ClientSize.Height + 50) // Si le joueur tombe dans le vide
                 {
                     txtscore.Text = "Score: " + score + Environment.NewLine + "You fell in the void !!";
                     gameTimer.Stop();
@@ -246,17 +246,17 @@ namespace GENDRON_ADRIEN_WFA
             }
         }
 
-        private void KeyIsDown(object sender, KeyEventArgs e)
+        private void KeyIsDown(object sender, KeyEventArgs e) // Lorsque l'utilisateur appuie sur une touche
         {
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.Left) // Si la touche est la flèche gauche
             {
                 goLeft = true;
             }
-            if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.Right) // Si la touche est la flèche droite
             {
                 goRight = true;
             }
-            if (e.KeyCode == Keys.Space && canJump)
+            if (e.KeyCode == Keys.Space && canJump) // Si la touche est la barre d'espace
             {
                 jumping = true;
                 canJump = false;
@@ -271,9 +271,9 @@ namespace GENDRON_ADRIEN_WFA
         }
 
 
-        private void KeyIsUp(object sender, KeyEventArgs e)
+        private void KeyIsUp(object sender, KeyEventArgs e) // Lorsque l'utilisateur relâche une touche
         {
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.Left) 
             {
                 goLeft = false;
             }
@@ -286,17 +286,17 @@ namespace GENDRON_ADRIEN_WFA
                 jumping = false;
                 jumpSpeed = 10;
 
-                // Ne réinitialisez pas la vitesse du joueur ici.
+                
             }
 
-            if (e.KeyCode == Keys.Enter && isGameOver == true)
+            if (e.KeyCode == Keys.Enter && isGameOver == true) // Si l'utilisateur appuie sur la touche Entrée et que le jeu est terminé
             {
                 RestartGame();
             }
         }
 
 
-        private void RestartGame()
+        private void RestartGame() // Méthode pour redémarrer le jeu
         {
             jumping = false;
             goLeft = false;
@@ -306,9 +306,9 @@ namespace GENDRON_ADRIEN_WFA
 
             txtscore.Text = "Score: " + score;
 
-            foreach (Control x in this.Controls)
+            foreach (Control x in this.Controls) // Réinitialisez la position de toutes les pièces
             {
-                if (x is PictureBox && x.Visible == false)
+                if (x is PictureBox && x.Visible == false) 
                 {
                     x.Visible = true;
                 }
@@ -330,8 +330,8 @@ namespace GENDRON_ADRIEN_WFA
             // Arrêtez la musique lorsque le jeu se termine
             backgroundMusicPlayer.Stop();
 
-            ennemyOne.Tag = "ennemy";
-            ennemyTwo.Tag = "ennemy";
+            ennemyOne.Tag = "ennemy"; // Réinitialisez le tag de l'ennemi
+            ennemyTwo.Tag = "ennemy"; // Réinitialisez le tag de l'ennemi
         }
     }
 }

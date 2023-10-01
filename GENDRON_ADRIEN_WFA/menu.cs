@@ -14,19 +14,24 @@ namespace GENDRON_ADRIEN_WFA
     {
         public menu()
         {
-            InitializeComponent();
+            InitializeComponent(); // Initialiser le composant
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
-            frm.Show();
-            this.Hide();
+            Form1 frm = new Form1(); // Ouvrir le formulaire 1
+            frm.Show(); 
+            this.Hide(); 
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); // Quitter l'application
         }
     }
 }
